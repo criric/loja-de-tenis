@@ -1,7 +1,6 @@
 import Buy from './Buy'
 import styles from '../layouts/Cards.module.css'
 import { Products } from '../Products'
-import { ImCart } from 'react-icons/im'
 
 function Cards({ setCart }) {
   return (

@@ -1,6 +1,5 @@
 import styles from '../layouts/Cards.module.css'
 import { ImCart } from 'react-icons/im'
-import { useState } from 'react'
 
 function Buy({ AddCart }) {
   return (

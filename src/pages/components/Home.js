@@ -1,6 +1,5 @@
 import Cards from './Cards'
 import styles from '../layouts/Home.module.css'
-import { useState } from 'react'
 
 function Home({ cart, setCart }) {
   return (
