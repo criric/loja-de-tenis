@@ -1,0 +1,14 @@
+.home {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cardsDisplay {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}

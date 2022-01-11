@@ -1,0 +1,43 @@
+.logo {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 2em;
+}
+
+.navStyle {
+  padding-top: 15px;
+}
+
+.listStyle {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  gap: 2em;
+  margin-right: 2em;
+}
+
+.textStyle {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+}
+
+.textStyle:hover {
+  color: #30a55d;
+  place-items: center;
+  transition: 0.3s;
+}
+
+.input {
+  width: 500px;
+  height: 18px;
+  margin-top: 2px;
+  border: none;
+  border-bottom: 2px solid;
+}
+
+.input:focus {
+  outline: none;
+  border-image: linear-gradient(45deg, #30a55d, #08ee60) 1;
+}
