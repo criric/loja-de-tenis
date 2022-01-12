@@ -15,6 +15,14 @@ function Navbar() {
       setCart(JSON.parse(localStorage.getItem('cart')))
     }
   }, [])
+
+  const removeFromCart = item => {
+    setCart(
+      cart.filter(product => {
+        return product.id !== item.id
+      })
+    )
+  }
   return (
     <Router>
       <nav className={styles.navStyle}>
@@ -49,7 +57,10 @@ function Navbar() {
           path="/"
           element={<Home setCart={setCart} cart={cart} />}
         ></Route>
-        <Route path="/carrinho" element={<Carrinho cart={cart} />}></Route>
+        <Route
+          path="/carrinho"
+          element={<Carrinho cart={cart} removeFromCart={removeFromCart} />}
+        ></Route>
         <Route path="/contato" element={<Contato />}></Route>
       </Routes>
     </Router>
