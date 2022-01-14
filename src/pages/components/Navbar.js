@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react'
 
 function Navbar() {
   const [cart, setCart] = useState([])
+  const [search, setSearch] = useState('')
   useEffect(() => {
     if (localStorage.getItem('cart')) {
       setCart(JSON.parse(localStorage.getItem('cart')))
@@ -17,12 +18,14 @@ function Navbar() {
   }, [])
 
   const removeFromCart = item => {
-    setCart(
-      cart.filter(product => {
-        return product.id !== item.id
-      })
-    )
+    const cartFilter = cart.filter(product => {
+      return product.id !== item.id
+    })
+
+    setCart(cartFilter)
+    JSON.parse(localStorage.setItem('cart', cartFilter))
   }
+
   return (
     <Router>
       <nav className={styles.navStyle}>
@@ -33,6 +36,7 @@ function Navbar() {
             type="text"
             placeholder="Qual produto está procurando?"
             className={styles.input}
+            onChange={event => setSearch(event.target.value)}
           ></input>
           <li>
             <Link as={ReachLink} to="/" className={styles.textStyle}>
@@ -55,7 +59,7 @@ function Navbar() {
         <Route
           exact
           path="/"
-          element={<Home setCart={setCart} cart={cart} />}
+          element={<Home setCart={setCart} cart={cart} search={search} />}
         ></Route>
         <Route
           path="/carrinho"

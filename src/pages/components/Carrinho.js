@@ -2,7 +2,6 @@ import styles from '../layouts/Carrinho.module.css'
 import { ImCross } from 'react-icons/im'
 
 function Carrinho({ cart, removeFromCart }) {
-  console.log(cart)
   return (
     <>
       <h1 className={styles.carrinho}>Carrinho</h1>
@@ -15,6 +14,7 @@ function Carrinho({ cart, removeFromCart }) {
                 <img src={item.image} alt="Imagem Exemplo" />
                 <h3>{item.title}</h3>
                 <h3>{item.price.toFixed(2)}</h3>
+
                 <button
                   className={styles.buttonStyle}
                   onClick={() => removeFromCart(item)}
