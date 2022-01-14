@@ -7,7 +7,7 @@ function Cards({ setCart, search }) {
     <>
       {Products.products
         .filter(value => {
-          if (search == '') {
+          if (search === '') {
             return value
           } else if (value.title.toLowerCase().includes(search.toLowerCase())) {
             return value
