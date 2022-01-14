@@ -11,6 +11,8 @@ function Cards({ setCart, search }) {
             return value
           } else if (value.title.toLowerCase().includes(search.toLowerCase())) {
             return value
+          } else {
+            return null
           }
         })
         .map(item => {
